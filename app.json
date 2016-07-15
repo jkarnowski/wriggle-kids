@@ -1,0 +1,7 @@
+{
+"name": "Wriggle-Kids-App",
+"description": "MEAN stack app for parents to make playdates for their kids",
+"repository": "https://github.com/jkarnowski/wriggle-kids",
+"keywords": ["node", "express", "angular", "MEAN", "mongodb", "REST", "API"],
+"addons": []
+}
