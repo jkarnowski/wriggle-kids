@@ -1,7 +1,25 @@
 {
-"name": "wriggle-kids-app",
-"main": "server.js",
-"dependencies": {
-  "express": "~4.5.1"
-}
+  "name": "wriggle-kids-app",
+  "main": "server.js",
+  "dependencies": {
+    "express": "~4.5.1"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "description": "creates playdates for kids with MEAN stack",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jkarnowski/wriggle-kids.git"
+  },
+  "keywords": [
+    "MEAN"
+  ],
+  "author": "Jaclyn Karnowski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jkarnowski/wriggle-kids/issues"
+  },
+  "homepage": "https://github.com/jkarnowski/wriggle-kids#readme"
 }
