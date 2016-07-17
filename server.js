@@ -3,6 +3,7 @@ var path = require('path');
 var bodyParser = require("body-parser");
 var app = express();
 var mongodb = require('mongodb');
+var mode = process.env.NODE_ENV;
 var mongoUri = process.env.MLAB_URI;
 var ObjectID = mongodb.ObjectID;
 
