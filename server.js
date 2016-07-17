@@ -41,8 +41,15 @@ function handleError(res, reason, message, code){
 
 // GET all playdates
 app.get('/playdates', function(req, res){
-  console.log("REQ - ", req);
+  db.collection(PLAYDATES_COLLECTION).find({}).toArray(function(err, docs){
+    if (err){
+      handleError(res, err.message, 'failed to get playdates');
+    } else {
+      res.status(200).json(docs);
+    }
+  });
 });
+
 // POST a new playdate
 app.post('/playdates', function(req, res){
   var newPlaydate = req.body;
@@ -63,13 +70,38 @@ app.post('/playdates', function(req, res){
 
 // GET a single playdate with an ID
 app.get('/playdates/:id', function(req, res){
-
+  var playdateId = new ObjectID(req.params.id);
+  db.collection(PLAYDATES_COLLECTION).findOne({
+    _id: playdateId}, function(err, doc){
+      if (err){
+        handleError(res, err.message, 'failed to get playdate');
+      } else {
+        res.status(200).json(doc);
+      }
+    });
 });
 // Update a single playdate with an ID
 app.put('/playdates/:id', function(req, res){
+  var updatePlaydate = req.body;
+  delete updatePlaydate._id;
+  var playdateId = new ObjectID(req.params.id);
 
+  db.collection(PLAYDATES_COLLECTION).updateOne({
+    _id: playdateId}, updatePlaydate, function(err, doc){
+      if (err){
+        handleError(res, err.message, 'failed to update playdate');
+      } else {
+        res.status(204).end();
+      }
+    });
 });
 // Delete a single playdate with an ID
 app.delete('/playdates/:id', function(req, res){
-
+  db.collection(PLAYDATES_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function(err, result){
+    if (err){
+      handleError(res, err.message, 'failed to delete playdate');
+    } else {
+      res.status(204).end();
+    }
+  });
 });
