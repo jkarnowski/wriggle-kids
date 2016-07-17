@@ -48,7 +48,20 @@ app.get('/playdates', function(req, res){
 });
 // POST a new playdate
 app.post('/playdates', function(req, res){
+  var newPlaydate = req.body;
+  newPlaydate.createDate = new Date();
 
+  if (!(req.body.title || req.body.host)){
+    handleError(res, "invalid playdate input", "must provide a playdate title and host", 400);
+  }
+
+  db.collection(PLAYDATES_COLLECTION).insertOne(newPlaydate, function(err, doc){
+    if (err){
+      handleError(res, err.message, 'failed to create new playdate');
+    } else{
+      res.status(200).json(doc.ops[0]);
+    }
+  });
 });
 
 // GET a single playdate with an ID
