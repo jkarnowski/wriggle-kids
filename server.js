@@ -36,3 +36,30 @@ mongodb.connect(process.env.MONGODB_URI || mongoUri, function (err, database){
 app.get('/', function(req, res){
   console.log('received a GET request!');
 })
+
+function handleError(res, reason, message, code){
+  console.log("ERROR - " + reason);
+  res.status(code || 500).json({"error": message});
+}
+
+// GET all playdates
+app.get('/playdates', function(req, res){
+  console.log("REQ - ", req);
+});
+// POST a new playdate
+app.post('/playdates', function(req, res){
+
+});
+
+// GET a single playdate with an ID
+app.get('/playdates/:id', function(req, res){
+
+});
+// Update a single playdate with an ID
+app.put('/playdates/:id', function(req, res){
+
+});
+// Delete a single playdate with an ID
+app.delete('/playdates/:id', function(req, res){
+
+});
