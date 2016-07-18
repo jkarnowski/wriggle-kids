@@ -30,14 +30,15 @@ mongodb.connect(process.env.MONGODB_URI || mongoUri, function (err, database){
   });
 });
 
-app.get('/', function(req, res){
-  console.log('received a GET request!');
-})
 
 function handleError(res, reason, message, code){
   console.log("ERROR - " + reason);
   res.status(code || 500).json({"error": message});
 }
+
+app.get('/', function(req, res){
+  console.log('received a GET request!');
+})
 
 // GET all playdates
 app.get('/playdates', function(req, res){
