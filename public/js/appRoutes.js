@@ -1,14 +1,16 @@
 'use strict';
 
-angular.module('appRoutes', [])
-.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
+wriggleApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
 
   $routeProvider
-
+  .when('/', {
+    templateUrl: 'views/home.html',
+    controller: 'MainCtrl'
+  })
   // home page, gets all playdates by default
   .when('/playdates', {
     templateUrl: 'views/home.html',
-    controller: 'MainCtrl',
+    controller: 'PlaydatesCtrl',
     resolve: {
       playdates: function(Playdates) {
         return Playdates.getPlaydates();
@@ -17,15 +19,15 @@ angular.module('appRoutes', [])
   })
 
   // get a new playdate form
-  .when('/playdates/new', {
-    templateUrl: 'views/new.html',
-    controller: 'PlaydatesCtrl',
-    resolve: {
-      newPlaydate: function(){
-        return Playdates.newPlaydateForm();
-      }
-    }
-  })
+  // .when('/playdates/new', {
+  //   templateUrl: 'views/new.html',
+  //   controller: 'PlaydatesCtrl',
+  //   resolve: {
+  //     newPlaydate: function(){
+  //       return Playdates.newPlaydateForm();
+  //     }
+  //   }
+  // })
 
   // return one playdate by ID
   .when('/playdates/:id', {
@@ -33,7 +35,7 @@ angular.module('appRoutes', [])
     controller: 'PlaydatesCtrl',
     resolve: {
       playdate: function(id) {
-        return Playdate.getPlaydate(id);
+        return Playdates.getPlaydate(id);
       }
     }
   })

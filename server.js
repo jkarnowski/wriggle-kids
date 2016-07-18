@@ -36,9 +36,9 @@ function handleError(res, reason, message, code){
   res.status(code || 500).json({"error": message});
 }
 
-app.get('/', function(req, res){
-  console.log('received a GET request!');
-})
+// app.get('/', function(req, res){
+//   console.log('received a GET request!');
+// })
 
 // GET all playdates
 app.get('/playdates', function(req, res){
