@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('MainCtrl', [])
 
 .controller('MainCtrl', ['$scope', function($scope) {

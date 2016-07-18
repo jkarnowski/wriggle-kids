@@ -3,14 +3,6 @@
 angular.module('PlaydateService', [])
 .factory('Playdate', ['$http', '$scope' function($http, $scope) {
 
-// $scope.addContact = function() {
-//   console.log($scope.contact);
-//   $http.post('/contactlist', $scope.contact).success(function(response) {
-//     console.log(response);
-//     refresh();
-//   });
-// };
-
     return {
         // call to get all playdates
         getPlaydates : function() {
@@ -35,5 +27,4 @@ angular.module('PlaydateService', [])
             return $http.delete('/playdates/' + id);
         }
     }
-
 }]);
