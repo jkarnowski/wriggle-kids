@@ -1,6 +1,7 @@
 'use strict';
 
-wriggleApp.controller('PlaydatesCtrl', ['$scope', function($scope, response) {
+angular.module('wriggleApp')
+.controller('PlaydatesCtrl', ['$scope', function($scope, response) {
   console.log('hello from the PLAYDATES controller!');
   $scope.tagline = 'can i show you something?'
   $scope.playdates = response.data;

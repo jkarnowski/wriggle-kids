@@ -1,6 +1,7 @@
 'use strict';
 
-wriggleApp.service('Playdates', ['$http', function($http) {
+angular.module('wriggleApp')
+.service('Playdates', ['$http', function($http) {
 
     this.getPlaydates = function() {
         return $http.get('/playdates')

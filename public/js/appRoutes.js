@@ -1,6 +1,7 @@
 'use strict';
 
-wriggleApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
+angular.module('wriggleApp')
+.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
 
   $routeProvider
   .when('/', {
