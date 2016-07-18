@@ -2,7 +2,7 @@
 
 // var wriggleApp = angular.module('wriggleApp', ['ngRoute', 'ngResource', 'appRoutes', 'MainCtrl', 'PlaydatesCtrl', 'PlaydateService']);
 
-angular.module('wriggleApp', ['ngRoute', 'ngResource'])
+angular.module('wriggleApp', ['ngRoute'])
 
 
 

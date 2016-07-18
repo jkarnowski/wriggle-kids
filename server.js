@@ -46,6 +46,7 @@ app.get('/playdates', function(req, res){
     if (err){
       handleError(res, err.message, 'failed to get playdates');
     } else {
+      console.log('hello from GET playdates')
       res.status(200).json(docs);
     }
   });

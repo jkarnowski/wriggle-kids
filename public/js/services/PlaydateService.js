@@ -1,15 +1,15 @@
 'use strict';
 
-angular.module('wriggleApp')
+angular.module('wriggleApp', ['ngRoute'])
 .service('Playdates', ['$http', function($http) {
 
     this.getPlaydates = function() {
         return $http.get('/playdates')
         .then(function(response){
-            console.log('SUCCESS - getting playdates! - ');
-            return response;
+            console.log('SUCCESS - getting playdates! - ', response);
+            // return response;
         }, function(response){
-            console.log('error getting playdates - ', response.status);
+            console.log('error getting playdates - ');
         })
     }
 
@@ -36,5 +36,4 @@ angular.module('wriggleApp')
         // delete : function(id) {
         //     return $http.delete('/playdates/' + id);
         // }
-    }
 }]);

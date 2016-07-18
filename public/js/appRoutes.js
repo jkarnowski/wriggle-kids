@@ -1,16 +1,16 @@
 'use strict';
 
-angular.module('wriggleApp')
-.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
+angular.module('wriggleApp', ['ngRoute'])
+.config(['$routeProvider', function($routeProvider){
 
   $routeProvider
   .when('/', {
-    templateUrl: 'views/home.html',
+    templateUrl: 'home.html',
     controller: 'MainCtrl'
   })
   // home page, gets all playdates by default
   .when('/playdates', {
-    templateUrl: 'views/home.html',
+    templateUrl: 'playdates/main.html',
     controller: 'PlaydatesCtrl',
     resolve: {
       playdates: function(Playdates) {
@@ -31,15 +31,15 @@ angular.module('wriggleApp')
   // })
 
   // return one playdate by ID
-  .when('/playdates/:id', {
-    templateUrl: 'views/playdate.html',
-    controller: 'PlaydatesCtrl',
-    resolve: {
-      playdate: function(id) {
-        return Playdates.getPlaydate(id);
-      }
-    }
-  })
+  // .when('/playdates/:id', {
+  //   templateUrl: 'views/playdate.html',
+  //   controller: 'PlaydatesCtrl',
+  //   resolve: {
+  //     playdate: function(id) {
+  //       return Playdates.getPlaydate(id);
+  //     }
+  //   }
+  // })
 
   // post a new playdate
   // .when('/playdates', {
@@ -51,5 +51,5 @@ angular.module('wriggleApp')
   // })
   .otherwise('/');
 
-  $locationProvider.html5Mode(true);
+  // $locationProvider.html5Mode(true);
 }]);
