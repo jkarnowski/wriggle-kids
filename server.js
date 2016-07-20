@@ -1,5 +1,6 @@
 var express = require('express');
 var path = require('path');
+var cons = require('consolidate');
 var bodyParser = require("body-parser");
 var app = express();
 var mongodb = require('mongodb');
@@ -8,6 +9,9 @@ var mongoUri = process.env.MLAB_URI;
 var ObjectID = mongodb.ObjectID;
 
 var PLAYDATES_COLLECTION = "playdates";
+
+// app.set('view engine', 'html');
+// app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
@@ -46,10 +50,9 @@ app.get('/', function(req, res){
 app.get('/playdates', function(req, res){
   db.collection(PLAYDATES_COLLECTION).find({}).toArray(function(err, docs){
     if (err){
-      handleError(res, err.message, 'failed to get playdates');
+      handleError(res, err.message, 'failed to get playdates from database');
     } else {
-      console.log('hello from GET playdates')
-      console.log(docs);
+      console.log('DOCS - ', docs);
       res.status(200).json(docs);
     }
   });

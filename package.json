@@ -2,9 +2,11 @@
   "name": "wriggle-kids-app",
   "main": "server.js",
   "dependencies": {
+    "body-parser": "^1.13.3",
+    "consolidate": "^0.14.1",
     "express": "~4.5.1",
-    "mongodb": "^2.1.6",
-    "body-parser": "^1.13.3"
+    "lodash": "^4.13.1",
+    "mongodb": "^2.1.6"
   },
   "engines": {
     "node": "4.1.1"

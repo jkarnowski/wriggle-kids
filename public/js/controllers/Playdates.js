@@ -1,15 +1,12 @@
 'use strict';
 
 angular.module('wriggleApp', ['ngRoute'])
-.controller('PlaydatesCtrl', ['$scope', function($scope) {
+.controller('PlaydatesCtrl', ['$scope', 'PlaydateFactory', function($scope, PlaydateFactory) {
+
+  $scope.test = 'testing';
 
   console.log('hello Playdates ctrl');
 
-  this.getAllPlaydates = function(){
-    Playdates.getPlaydates()
-    .then(function(response){
-      console.log(response)
-    })
-  }
+  $scope.playdateList = PlaydateFactory.getPlaydates();
 
 }])
