@@ -11,6 +11,8 @@ var PLAYDATES_COLLECTION = "playdates";
 
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
+
 
 var db;
 mongodb.connect(process.env.MONGODB_URI || mongoUri, function (err, database){
@@ -36,9 +38,9 @@ function handleError(res, reason, message, code){
   res.status(code || 500).json({"error": message});
 }
 
-// app.get('/', function(req, res){
-//   console.log('received a GET request!');
-// })
+app.get('/', function(req, res){
+  console.log('received a GET request!');
+})
 
 // GET all playdates
 app.get('/playdates', function(req, res){
@@ -47,6 +49,7 @@ app.get('/playdates', function(req, res){
       handleError(res, err.message, 'failed to get playdates');
     } else {
       console.log('hello from GET playdates')
+      console.log(docs);
       res.status(200).json(docs);
     }
   });

@@ -1,17 +1,19 @@
-'use strict';
+// 'use strict';
 
-angular.module('wriggleApp', ['ngRoute'])
-.service('Playdates', ['$http', function($http) {
+// angular.module('wriggleApp', ['ngRoute'])
+// .service('Playdates', ['$http', function($http) {
 
-    this.getPlaydates = function() {
-        return $http.get('/playdates')
-        .then(function(response){
-            console.log('SUCCESS - getting playdates! - ', response);
-            // return response;
-        }, function(response){
-            console.log('error getting playdates - ');
-        })
-    }
+//     var urlBase = 'http://localhost:8080';
+
+//     this.getPlaydates = function() {
+//         return $http.get(urlBase + '/playdates')
+//         .then(function(response){
+//             console.log('SUCCESS - getting playdates! - ', response);
+//             // return response;
+//         }, function(response){
+//             console.log('error getting playdates - ');
+//         })
+//     }
 
     // return {
     //     // call to get all playdates
@@ -36,4 +38,4 @@ angular.module('wriggleApp', ['ngRoute'])
         // delete : function(id) {
         //     return $http.delete('/playdates/' + id);
         // }
-}]);
+// }]);

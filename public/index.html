@@ -52,14 +52,14 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<div ng-view></div>
+<!-- <ng-view></ng-view> -->
+<div ng-controller="PlaydatesCtrl">
+  <button ng-click="getPlaydates()">Get Playdates</button>
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
 <script src="js/app.js"></script>
-<script src="js/appRoutes.js"></script>
-<script src='js/controllers/Main.js'></script>
 <script src='js/controllers/Playdates.js'></script>
-<script src='js/services/PlaydateService.js'></script>
 </body>
 </html>

@@ -1,23 +1,28 @@
-'use strict';
+// 'use strict';
 
-angular.module('wriggleApp', ['ngRoute'])
-.config(['$routeProvider', function($routeProvider){
+// angular.module('wriggleApp', ['ngRoute'])
+// .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
 
-  $routeProvider
-  .when('/', {
-    templateUrl: 'home.html',
-    controller: 'MainCtrl'
-  })
-  // home page, gets all playdates by default
-  .when('/playdates', {
-    templateUrl: 'playdates/main.html',
-    controller: 'PlaydatesCtrl',
-    resolve: {
-      playdates: function(Playdates) {
-        return Playdates.getPlaydates();
-      }
-    }
-  })
+//   $routeProvider
+//   .when('/', {
+//     templateUrl: 'home.html',
+//     controller: 'MainCtrl'
+//   })
+//   // home page, gets all playdates by default
+//   .when('/playdates', {
+//     templateUrl: 'playdates/main.html',
+//     controller: 'PlaydatesCtrl',
+//     resolve: {
+//       playdates: function(Playdates) {
+//         return Playdates.getPlaydates();
+//       }
+//     }
+//   })
+  // shows one playdate
+  // edits one playdate
+
+  // login
+  // signup
 
   // get a new playdate form
   // .when('/playdates/new', {
@@ -49,7 +54,7 @@ angular.module('wriggleApp', ['ngRoute'])
 
   //   }
   // })
-  .otherwise('/');
+//   .otherwise('/');
 
-  // $locationProvider.html5Mode(true);
-}]);
+//   $locationProvider.html5Mode(true);
+// }]);
