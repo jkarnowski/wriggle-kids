@@ -1,23 +1,18 @@
-// 'use strict';
+'use strict';
 
-// angular.module('wriggleApp', ['ngRoute'])
-// .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
+angular.module('wriggleApp', ['ngRoute'])
+.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
 
-//   $routeProvider
+  $routeProvider
 //   .when('/', {
 //     templateUrl: 'home.html',
 //     controller: 'MainCtrl'
 //   })
 //   // home page, gets all playdates by default
-//   .when('/playdates', {
-//     templateUrl: 'playdates/main.html',
-//     controller: 'PlaydatesCtrl',
-//     resolve: {
-//       playdates: function(Playdates) {
-//         return Playdates.getPlaydates();
-//       }
-//     }
-//   })
+  .when('/playdates', {
+    templateUrl: 'playdates/main.html',
+    controller: 'PlaydatesCtrl'
+  })
   // shows one playdate
   // edits one playdate
 
@@ -54,7 +49,7 @@
 
   //   }
   // })
-//   .otherwise('/');
+  .otherwise('/');
 
-//   $locationProvider.html5Mode(true);
-// }]);
+  $locationProvider.html5Mode(true);
+}]);
