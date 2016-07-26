@@ -1,18 +1,22 @@
 <div class="container">
   <div class="row">
+  <h1>Upcoming Playdates in Chicago</h1>
+  <h2>featured</h2>
     <table>
       <thead>
         <tr>
           <th>Playdate</th>
           <th>Host</th>
+          <th>Date</th>
         </tr>
       </thead>
       <tbody>
         <tr ng-repeat="play in playdateList">
           <td>{{play.title}}</td>
           <td>{{play.host}}}</td>
+          <td>{{play.date}}}</td>
         </tr>
       </tbody>
       </table>
-  </div>
+  </div> <!-- end of row -->
 </div> <!-- end of container -->
