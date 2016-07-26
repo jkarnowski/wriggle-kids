@@ -8,7 +8,7 @@ angular.module('wriggleApp', ['ngRoute'])
 
   $routeProvider
   .when('/', {
-    templateUrl: 'views/home.html',
+    templateUrl: 'views/main.html',
     controller: 'MainCtrl'
   })
   .when('/playdates', {
