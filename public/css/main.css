@@ -1,0 +1,13 @@
+.debug {
+  outline: 1px solid red;
+}
+
+/*navbar*/
+.navbar {
+  width: 100%;
+}
+
+.navbar > ul > li {
+  font-size: 18px;
+  text-decoration: none;
+}
