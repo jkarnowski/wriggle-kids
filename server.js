@@ -44,6 +44,7 @@ function handleError(res, reason, message, code){
 
 app.get('/', function(req, res){
   console.log('received a GET request!');
+  res.sendfile('./public/views/index.html');
 })
 
 // GET all playdates
