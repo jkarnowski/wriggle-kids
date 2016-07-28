@@ -4,9 +4,10 @@ var cons = require('consolidate');
 var bodyParser = require("body-parser");
 var app = express();
 var mongodb = require('mongodb');
+var ObjectID = mongodb.ObjectID;
+
 var mode = process.env.NODE_ENV;
 var mongoUri = process.env.MLAB_URI;
-var ObjectID = mongodb.ObjectID;
 
 var PLAYDATES_COLLECTION = "playdates";
 
@@ -29,11 +30,6 @@ mongodb.connect(process.env.MONGODB_URI || mongoUri, function (err, database){
   db = database;
   console.log("Database connection is ready");
 
-  // initialize app
-  var server = app.listen(process.env.PORT || 8080, function(){
-    var port = server.address().port;
-    console.log("app is running on port: ", port);
-  });
 });
 
 
@@ -114,3 +110,9 @@ app.delete('/playdates/:id', function(req, res){
     }
   });
 });
+
+  // initialize app
+  var server = app.listen(process.env.PORT || 8080, function(){
+    var port = server.address().port;
+    console.log("app is running on port: ", port);
+  });
