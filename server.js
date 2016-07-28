@@ -37,7 +37,6 @@ function handleError(res, reason, message, code){
   res.status(code || 500).json({"error": message});
 }
 
-
 // GET all playdates
 app.get('/playdates', function(req, res){
   db.collection(PLAYDATES_COLLECTION).find({}).toArray(function(err, docs){

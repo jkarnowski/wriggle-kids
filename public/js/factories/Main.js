@@ -1,14 +1,14 @@
-// 'use strict';
+'use strict';
 
-// angular.module('wriggleApp', 'ngRoute')
-// .service('Main', ['$http', function($http){
+angular.module('wriggleApp', 'ngRoute')
+.service('Main', ['$http', function($http){
 
-//   var urlBase = 'http://localhost:8080';
-//   var mainData = {};
+  var urlBase = 'http://localhost:8080';
+  var mainData = {};
 
-//   mainData.getHome = function(){
-//     return $http.get(urlBase + '/');
-//   }
+  mainData.getHome = function(){
+    return $http.get(urlBase);
+  }
 
-//   return mainData;
-// }])
+  return mainData;
+}])
