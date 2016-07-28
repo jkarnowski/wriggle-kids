@@ -9,6 +9,7 @@ var ObjectID = mongodb.ObjectID;
 var methodOverride = require('method-override'); //DELETE and PUT routes
 
 var mode = process.env.NODE_ENV;
+var mongoURI = process.env.MLAB_URI;
 var PLAYDATES_COLLECTION = "playdates";
 
 app.use(express.static(__dirname + '/public'));
