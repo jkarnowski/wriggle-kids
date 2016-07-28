@@ -8,22 +8,15 @@
   <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body ng-app="wriggleApp">
-
-  <nav id="navbar-wrap">
-    <ul class="navbar debug">
-      <li><a href="#/" title="MAIN">WrigglePlay</a></li>
-      <li><a href="#chicago">Chicago</a></li>
-      <li><a href="#aboutus">About Us</a></li>
-    </ul>
-  </nav>
-
-  <ng-view></ng-view>
+  <div ng-controller="MainCtrl">
+  {{testing}}
+  </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-resource.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-sanitize.js"></script>
   <script src="js/app.js"></script>
-  <script src="js/appRoutes.js"></script>
-  <script src='js/controllers/Playdates.js'></script>
-  <script src='js/factories/PlaydateFactory.js'></script>
+  <script src='js/controllers/Main.js'></script>
 </body>
 </html>

@@ -3,8 +3,6 @@
 angular.module('wriggleApp', ['ngRoute'])
 .controller('PlaydatesCtrl', ['$scope', 'PlaydateFactory', function($scope, PlaydateFactory) {
 
-  $scope.test = 'testing';
-
   console.log('hello Playdates ctrl');
 
   $scope.playdateList = PlaydateFactory.getPlaydates();
