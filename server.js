@@ -1,6 +1,7 @@
 var express = require('express');
 var path = require('path');
 var cons = require('consolidate');
+var favicon = require('serve-favicon');
 var bodyParser = require("body-parser");
 var app = express();
 var mongodb = require('mongodb');
