@@ -6,22 +6,19 @@ var bodyParser = require("body-parser");
 var app = express();
 var mongodb = require('mongodb');
 var ObjectID = mongodb.ObjectID;
+var methodOverride = require('method-override'); //DELETE and PUT routes
 
 var mode = process.env.NODE_ENV;
-var mongoUri = process.env.MLAB_URI;
-
 var PLAYDATES_COLLECTION = "playdates";
 
-// app.set('view engine', 'html');
-// app.set('views', path.join(__dirname, 'views'));
-
 app.use(express.static(__dirname + '/public'));
+app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
-
+app.use(bodyParser.urlencoded({'extended':'true'}));
+app.use(methodOverride());
 
 var db;
-mongodb.connect(process.env.MONGODB_URI || mongoUri, function (err, database){
+mongodb.connect(process.env.MONGO_URI, {native_parser:true}, function (err, database){
   if (err) {
     console.log(err);
     process.exit(1);
@@ -39,10 +36,6 @@ function handleError(res, reason, message, code){
   res.status(code || 500).json({"error": message});
 }
 
-app.get('/', function(req, res){
-  console.log('received a GET request!');
-  res.sendfile('./public/views/index.html');
-})
 
 // GET all playdates
 app.get('/playdates', function(req, res){
@@ -111,6 +104,10 @@ app.delete('/playdates/:id', function(req, res){
     }
   });
 });
+
+app.get('*', function(req, res){
+  res.sendfile('./public/index.html');
+})
 
   // initialize app
   var server = app.listen(process.env.PORT || 8080, function(){
