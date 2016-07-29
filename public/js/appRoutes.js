@@ -13,9 +13,13 @@ wriggleApp.config([
     templateUrl: 'views/main.html',
     controller: 'MainCtrl'
   })
+  .when('/about', {
+    templateUrl: 'views/about_us.html',
+    controller: 'MainCtrl'
+  })
   .when('/playdates/new', {
     templateUrl: 'views/playdates/new.html',
-    controller: 'PlaydatesCtrl'
+    controller: 'MainCtrl'
   })
   // .when('/playdates/:id', {
   //   templateUrl: 'views/playdates/show.html',
@@ -25,10 +29,3 @@ wriggleApp.config([
 
   $locationProvider.html5Mode(true);
 }]);
-
-// wriggleApp.controller('MainCtrl', ['$scope', function($scope){
-//   $scope.testing = 'hello from MAIN bitches';
-// }])
-// .controller('PlaydatesCtrl', ['$scope', function($scope){
-//   $scope.testing = 'hello from playdates bitches';
-// }])
