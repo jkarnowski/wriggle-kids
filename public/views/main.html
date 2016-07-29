@@ -1,8 +1,7 @@
 <div class="container debug">
   <div class="row debug">
     <h1>Upcoming Playdates in Chicago</h1>
-    <p>TESTING - {{testing}}</p>
-    <h2>featured</h2>
+    <h2>join the revolution</h2>
     <table class="debug">
       <thead>
         <tr>
@@ -12,10 +11,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td> future title</td>
-          <td>new host</td>
-          <td>date of the playdate</td>
+        <tr ng-repeat="playdate in playdatesList">
+          <td>{{playdate.title}}</td>
+          <td>{{playdate.host}}</td>
+          <td>FAKE DATE</td>
         </tr>
       </tbody>
     </table>

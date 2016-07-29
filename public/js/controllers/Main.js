@@ -6,10 +6,6 @@ wriggleApp.controller('MainCtrl', ['$scope', '$http', function($scope, $http) {
 
   $http.get(base + '/playdates')
   .success(function(sResponse){
-    console.log(sResponse);
-    $scope.testing = "testing";
-  })
-  .error(function(sResponse){
-    console.log('failing to get the main deal')
+    $scope.playdatesList = sResponse;
   })
 }])

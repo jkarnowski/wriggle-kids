@@ -43,7 +43,6 @@ app.get('/playdates', function(req, res){
     if (err){
       handleError(res, err.message, 'failed to get playdates from database');
     } else {
-      console.log('DOCS - ', docs);
       res.status(200).json(docs);
     }
   });
