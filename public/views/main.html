@@ -1,32 +1,23 @@
-  <nav id="navbar-wrap">
-    <ul class="navbar debug">
-      <li><a ng-href="#/main" title="MAIN">WrigglePlay</a></li>
-      <li><a href="#/chicago">Chicago</a></li>
-      <li><a href="#/playdates/new">New Playdate</a></li>
-      <li><a href="#aboutus">About Us</a></li>
-    </ul>
-  </nav>
-
-  <div class="container debug">
-    <div class="row debug">
-      <h1>Upcoming Playdates in Chicago</h1>
-      <p>TESTING - {{testing}}</p>
-      <h2>featured</h2>
-      <table class="debug">
-        <thead>
-          <tr>
-            <th>Playdate</th>
-            <th>Host</th>
-            <th>Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="play in playdateList">
-            <td>{{play.title}}</td>
-            <td>{{play.host}}}</td>
-            <td>{{play.date}}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div> <!-- end of row -->
+<div class="container debug">
+  <div class="row debug">
+    <h1>Upcoming Playdates in Chicago</h1>
+    <p>TESTING - {{testing}}</p>
+    <h2>featured</h2>
+    <table class="debug">
+      <thead>
+        <tr>
+          <th>Playdate</th>
+          <th>Host</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> future title</td>
+          <td>new host</td>
+          <td>date of the playdate</td>
+        </tr>
+      </tbody>
+    </table>
+  </div> <!-- end of row -->
 </div> <!-- end of container -->
