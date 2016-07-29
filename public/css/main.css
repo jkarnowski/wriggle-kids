@@ -1,40 +1,94 @@
-.debug {
-  outline: 1px solid red;
+html {
+    position: relative;
+    min-height: 100%;
 }
+/* EMERALD GREEN #2ecc71*/
+/*OR*/
+/*ocean blue #3498db */
+
+/*.debug {
+  outline: 1px solid red;
+}*/
 
 /*navbar*/
 header {
-  margin: 0;
-  padding: 0;
-  width: 100%;
+    border-bottom: 1px solid rgba(0,0,0,.15);
+    display: flex;
+    flex-direction: row;
+    text-align: center;
 }
 
-nav ul {
+img#wriggle-logo {
+    height: 120px;
+    width: 140px;
+    border: 2px solid #3498db;
+}
+
+header > div#logo {
+    line-height: 70px;
+    position: relative;
+}
+
+header > div#logo > h1 {
+    color: #3498db;
+    font-weight: 300;
+    text-transform: lowercase;
+}
+
+header nav {
+    flex: 1;
+    margin-top: 50px;
+}
+
+header nav ul {
   list-style: none;
   text-align: center;
   padding: 0;
   /*margin: 0;*/
 }
-
 nav li {
   font-size: 1.2em;
   line-height: 40px;
   display: inline-block;
+  position: relative;
   height: 40px;
-  padding-right: 10px;
-  padding-left: 10px;
-  border-bottom: 1px solid #888;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-bottom: 1px dotted rgba(0,0,0,.7);
 }
 
-nav a {
+header nav > ul > li:last-of-type {
+    border-bottom: none;
+    outline: 1px solid black;
+    box-shadow: 6px 6px 5px #888888;
+    margin-left: 200px;
+    background-color: #3498db;
+    color: white;
+}
+
+
+nav ul li a {
   text-decoration: none;
   display: block;
 }
 
-.navbar-brand {
-  margin-right: 510px;
-  margin-left: 0;
-  width: 10%;
+nav ul li a:link {
+    color: black;
+}
+
+/* visited link */
+nav ul li a:visited {
+    color: black;
+}
+
+/* mouse over link */
+nav ul li a:hover {
+    color: #c0392b;
+}
+
+/* selected link */
+nav ul li a:active {
+    color: #c0392b;
 }
 
 #wriggle-img {
@@ -42,11 +96,55 @@ nav a {
   width: 120px;
 }
 
+/*footer*/
+footer {
+    position: absolute;
+    border-top: .5px solid rgba(0,0,0,.25);
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    font-size: 10px;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+/*all views*/
+body {
+    background: #eee;
+    color: #444;
+    -webkit-font-smoothing: antialiased;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    font-weight: 400;
+    margin: 0 0 100px;
+    height: auto !important;
+    height: 100%;
+    min-height: 100%;
+    text-rendering: optimizeLegibility;
+}
+
 /*main*/
 .main-background {
   background-color: #3498db;
+  opacity: 0.8;
+  padding-bottom: 200px;
+  outline: 2px solid black;
+  text-align: center;
+  margin: 0;
 }
 
+#play-header{
+    padding-top: 100px;
+}
+
+#explore-wriggle-btn {
+    width: 50%;
+    padding: 20px;
+    background-color: #bdc3c7;
+    font-size: 1em;
+    text-transform: uppercase;
+}
 /*
     trg - tiny responsive grid
     author: j. ky marsh
