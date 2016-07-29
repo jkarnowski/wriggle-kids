@@ -13,6 +13,10 @@ wriggleApp.config([
     templateUrl: 'views/main.html',
     controller: 'MainCtrl'
   })
+  .when('/playdates', {
+    templateUrl: 'views/playdates/index.html',
+    controller: 'MainCtrl'
+  })
   .when('/about', {
     templateUrl: 'views/about_us.html',
     controller: 'MainCtrl'

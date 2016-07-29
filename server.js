@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({'extended':'true'}));
 app.use(methodOverride());
 
 var db;
-mongodb.connect(process.env.MONGO_URI, {native_parser:true}, function (err, database){
+mongodb.MongoClient.connect("", function (err, database){
   if (err) {
     console.log(err);
     process.exit(1);

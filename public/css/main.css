@@ -42,6 +42,11 @@ nav a {
   width: 120px;
 }
 
+/*main*/
+.main-background {
+  background-color: #3498db;
+}
+
 /*
     trg - tiny responsive grid
     author: j. ky marsh
