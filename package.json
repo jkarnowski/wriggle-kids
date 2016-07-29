@@ -2,15 +2,20 @@
   "name": "wriggle-kids-app",
   "main": "server.js",
   "dependencies": {
+    "body-parser": "^1.13.3",
+    "consolidate": "^0.14.1",
     "express": "~4.5.1",
+    "lodash": "^4.13.1",
+    "method-override": "^2.3.6",
     "mongodb": "^2.1.6",
-    "body-parser": "^1.13.3"
+    "nodemon": "^1.10.0",
+    "serve-favicon": "^2.3.0"
   },
   "engines": {
     "node": "4.1.1"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "description": "creates playdates for kids with MEAN stack",
   "version": "1.0.0",

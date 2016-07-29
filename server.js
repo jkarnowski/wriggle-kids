@@ -1,19 +1,25 @@
 var express = require('express');
 var path = require('path');
+var cons = require('consolidate');
+var favicon = require('serve-favicon');
 var bodyParser = require("body-parser");
 var app = express();
 var mongodb = require('mongodb');
-var mode = process.env.NODE_ENV;
-var mongoUri = process.env.MLAB_URI;
 var ObjectID = mongodb.ObjectID;
+var methodOverride = require('method-override'); //DELETE and PUT routes
 
-var PLAYDATES_COLLECTION = "playdates";
+var mode = process.env.NODE_ENV;
+var mongoURI = process.env.MLAB_URI;
+PLAYDATES_COLLECTION = "playdates";
 
 app.use(express.static(__dirname + '/public'));
+app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({'extended':'true'}));
+app.use(methodOverride());
 
 var db;
-mongodb.connect(process.env.MONGODB_URI || mongoUri, function (err, database){
+mongodb.MongoClient.connect("", function (err, database){
   if (err) {
     console.log(err);
     process.exit(1);
@@ -23,11 +29,6 @@ mongodb.connect(process.env.MONGODB_URI || mongoUri, function (err, database){
   db = database;
   console.log("Database connection is ready");
 
-  // initialize app
-  var server = app.listen(process.env.PORT || 8080, function(){
-    var port = server.address().port;
-    console.log("app is running on port: ", port);
-  });
 });
 
 
@@ -36,17 +37,12 @@ function handleError(res, reason, message, code){
   res.status(code || 500).json({"error": message});
 }
 
-// app.get('/', function(req, res){
-//   console.log('received a GET request!');
-// })
-
 // GET all playdates
 app.get('/playdates', function(req, res){
   db.collection(PLAYDATES_COLLECTION).find({}).toArray(function(err, docs){
     if (err){
-      handleError(res, err.message, 'failed to get playdates');
+      handleError(res, err.message, 'failed to get playdates from database');
     } else {
-      console.log('hello from GET playdates')
       res.status(200).json(docs);
     }
   });
@@ -107,3 +103,13 @@ app.delete('/playdates/:id', function(req, res){
     }
   });
 });
+
+app.get('*', function(req, res){
+  res.sendfile('./public/index.html');
+})
+
+  // initialize app
+  var server = app.listen(process.env.PORT || 8080, function(){
+    var port = server.address().port;
+    console.log("app is running on port: ", port);
+  });

@@ -1,55 +1,31 @@
 'use strict';
 
-angular.module('wriggleApp', ['ngRoute'])
-.config(['$routeProvider', function($routeProvider){
+var wriggleApp = angular.module('wriggleApp', ['ngRoute', 'ngResource']);
+
+
+wriggleApp.config([
+  '$routeProvider',
+  '$locationProvider',
+  function($routeProvider, $locationProvider){
 
   $routeProvider
   .when('/', {
-    templateUrl: 'home.html',
+    templateUrl: 'views/main.html',
     controller: 'MainCtrl'
   })
-  // home page, gets all playdates by default
   .when('/playdates', {
-    templateUrl: 'playdates/main.html',
-    controller: 'PlaydatesCtrl',
-    resolve: {
-      playdates: function(Playdates) {
-        return Playdates.getPlaydates();
-      }
-    }
+    templateUrl: 'views/playdates/index.html',
+    controller: 'MainCtrl'
   })
-
-  // get a new playdate form
-  // .when('/playdates/new', {
-  //   templateUrl: 'views/new.html',
-  //   controller: 'PlaydatesCtrl',
-  //   resolve: {
-  //     newPlaydate: function(){
-  //       return Playdates.newPlaydateForm();
-  //     }
-  //   }
-  // })
-
-  // return one playdate by ID
-  // .when('/playdates/:id', {
-  //   templateUrl: 'views/playdate.html',
-  //   controller: 'PlaydatesCtrl',
-  //   resolve: {
-  //     playdate: function(id) {
-  //       return Playdates.getPlaydate(id);
-  //     }
-  //   }
-  // })
-
-  // post a new playdate
-  // .when('/playdates', {
-  //   templateUrl: '',
-  //   controller: '',
-  //   resolve: {
-
-  //   }
-  // })
+  .when('/about', {
+    templateUrl: 'views/about_us.html',
+    controller: 'MainCtrl'
+  })
+  .when('/playdates/new', {
+    templateUrl: 'views/playdates/new.html',
+    controller: 'MainCtrl'
+  })
   .otherwise('/');
 
-  // $locationProvider.html5Mode(true);
+  $locationProvider.html5Mode(true);
 }]);
