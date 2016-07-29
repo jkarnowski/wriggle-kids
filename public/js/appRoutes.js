@@ -21,10 +21,6 @@ wriggleApp.config([
     templateUrl: 'views/playdates/new.html',
     controller: 'MainCtrl'
   })
-  // .when('/playdates/:id', {
-  //   templateUrl: 'views/playdates/show.html',
-  //   controller: 'PlaydatesCtrl'
-  // })
   .otherwise('/');
 
   $locationProvider.html5Mode(true);

@@ -4,15 +4,15 @@
     <h2>join the revolution</h2>
     <table class="debug">
       <thead>
-        <tr>
+        <tr class="debug">
           <th>Playdate</th>
           <th>Host</th>
           <th>Date</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="debug">
         <tr ng-repeat="playdate in playdatesList">
-          <td>{{playdate.title}}</td>
+          <td><a href="" ng-click="getPlayDate(playdate._id)">{{playdate.title}}</a></td>
           <td>{{playdate.host}}</td>
           <td>FAKE DATE</td>
         </tr>
