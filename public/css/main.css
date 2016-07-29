@@ -20,6 +20,17 @@ img#wriggle-logo {
     border: 2px solid #3498db;
 }
 
+header > div#logo {
+    line-height: 70px;
+    position: relative;
+}
+
+header > div#logo > h1 {
+    color: #3498db;
+    font-weight: 300;
+    text-transform: lowercase;
+}
+
 header nav {
     flex: 1;
     margin-top: 50px;
@@ -37,8 +48,8 @@ nav li {
   display: inline-block;
   position: relative;
   height: 40px;
-  padding-right: 10px;
-  padding-left: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
   border-bottom: 1px dotted rgba(0,0,0,.7);
 }
 
@@ -46,34 +57,42 @@ header nav > ul > li:last-of-type {
     border-bottom: none;
     outline: 1px solid black;
     box-shadow: 6px 6px 5px #888888;
+    margin-left: 200px;
+    background-color: #3498db;
+    color: white;
 }
 
-header > div#logo {
-    line-height: 70px;
-    position: relative;
-}
 
-header > div#logo > h1 {
-    color: #3498db;
-    font-weight: 300;
-    text-transform: lowercase;
-}
-
-nav a {
+nav ul li a {
   text-decoration: none;
   display: block;
 }
 
-.navbar-brand {
-  margin-right: 510px;
-  margin-left: 0;
-  width: 10%;
+nav ul li a:link {
+    color: black;
+}
+
+/* visited link */
+nav ul li a:visited {
+    color: black;
+}
+
+/* mouse over link */
+nav ul li a:hover {
+    color: #c0392b;
+}
+
+/* selected link */
+nav ul li a:active {
+    color: #c0392b;
 }
 
 #wriggle-img {
   height: 110px;
   width: 120px;
 }
+
+/*end of navbar*/
 
 body {
     background: #eee;
